@@ -183,8 +183,8 @@ class ToastWindow: UIWindow {
                 self?.oldWindow?.makeKeyAndVisible()
                 self?.resignKey()
 
-                if let onToastDimissed = self?.onToastDimissed {
-                    onToastDimissed(self ?? ToastWindow())
+                if let onToastDimissed = self?.onToastDimissed, let t = self {
+                    onToastDimissed(t)
                 }
             }
         }
